@@ -4,87 +4,149 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moto DolbyAtmos</title>
-  
   <link rel="icon" href="https://telegra.ph/file/b57356b30c275dbdfe0a9.png">
-</head>
   <style>
-  	    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #111; /* Dark background color */
-    color: #eee; /* Light text color */
-}
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: #eee;
+      overflow-x: hidden;
+    }
 
-header {
-    background: linear-gradient(to right, #F12317, #912193); /* Gradient background */
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
+    header {
+      background: linear-gradient(to right, #F12317, #912193);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-main {
-    padding: 20px;
-}
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
 
-h1, h2, h3 {
-    color: #fff; /* White headings */
-}
+    header img {
+      z-index: 2;
+      position: relative;
+      max-width: 150px;
+      height: auto;
+      animation: fadeInDown 1s;
+    }
 
-#features, #screenshots, #download {
-    margin-bottom: 40px;
-}
+    header h1 {
+      z-index: 2;
+      position: relative;
+      font-size: 2.5rem;
+      margin-top: 20px;
+      animation: fadeInUp 1s;
+    }
 
-#download a {
-    display: inline-block;
-    padding: 10px 20px;
-    background: linear-gradient(to right, #F12317, #912193); /* Gradient background */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease; /* Smooth transition effect */
-}
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-#download a:hover {
-    background: linear-gradient(to right, #F12317, #912193); /* Change gradient on hover */
-}
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
+    main {
+      padding: 40px 20px;
+    }
 
-#footer {
-    position: bottom;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Darker footer background */
-    color: #ccc;
-    font-size: 14px;
-    padding: 10px 0;
-    text-align: center;
-}
+    h2, h3 {
+      color: #F12317;
+      margin-bottom: 20px;
+    }
 
-#footer a {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+    #features, #requirements, #installation, #download, #contact {
+      margin-bottom: 60px;
+    }
 
-#footer a:hover {
-    color: #fff;
-}
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
 
+    ul li {
+      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      transition: background 0.3s ease;
+    }
+
+    ul li:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    #download a, #contact a {
+      display: inline-block;
+      padding: 15px 30px;
+      background: linear-gradient(to right, #F12317, #912193);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    #download a:hover, #contact a:hover {
+      background: linear-gradient(to right, #912193, #F12317);
+      transform: translateY(-5px);
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #ccc;
+      font-size: 14px;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
   </style>
+</head>
 <body>
-    <header>
-    <img src="https://telegra.ph/file/b57356b30c275dbdfe0a9.png" alt="Dolby Atmos" style="max-width: 100%; height: auto;">
+  <header>
+    <img src="https://telegra.ph/file/b57356b30c275dbdfe0a9.png" alt="Dolby Atmos">
     <h1>Module For Rooted Devices</h1>
-</header>
-
+  </header>
   <main>
     <section id="introduction">
       <h2>Introduction</h2>
       <p>Welcome to our website! Today, we're thrilled to introduce you to the incredible world of Moto Dolby Atmos, an innovative audio enhancement technology for your Android device. Let's dive in and discover its amazing features.</p>
     </section>
-
     <section id="features">
       <h2>Features</h2>
       <ul>
@@ -102,7 +164,6 @@ h1, h2, h3 {
         </li>
       </ul>
     </section>
-
     <section id="requirements">
       <h2>System Requirements</h2>
       <ul>
@@ -114,7 +175,6 @@ h1, h2, h3 {
         <li>Tested on LineageOS 20</li>
       </ul>
     </section>
-
     <section id="installation">
       <h2>Installation Guide</h2>
       <p>To install Moto Dolby Atmos:</p>
@@ -122,30 +182,25 @@ h1, h2, h3 {
         <li>Remove any other Dolby modules with different name.</li>
         <li>Download DolbyAtmos module from below and flash it using Magisk or KSU.</li>
         <li>Reboot your device.</li>
-        <li>Congratulation DolbyAtmos has been installed on your device.</li>
-        <li>open the Dolby Atmos app and customize your audio settings to your preference.</li>
+        <li>Congratulations! DolbyAtmos has been installed on your device.</li>
+        <li>Open the Dolby Atmos app and customize your audio settings to your preference.</li>
       </ol>
     </section>
-    
     <section id="download">
       <h2>Download</h2>
       <p>Download Dolby Atmos Module v7.4</p>
       <a href="https://github.com/ZORO2045/DolbyAtmos/releases/download/DolbyAtmos/Moto.DolbyAtmos.v7.6.Magisk+KSU.zip">Download Now</a>
-            <a href="https://t.me/infoGRX_SC/95?single">Screenshots</a>
+      <a href="https://t.me/infoGRX_SC/95?single">Screenshots</a>
     </section>
-    
-     <section id="download">
+    <section id="contact">
       <h2>Contact us</h2>
       <p>Follow our telegram channel for more.</p>
       <a href="https://t.me/infoGRX">Join us</a>
       <a href="https://t.me/ZORO2045">Contact me</a>
-      
     </section>
   </main>
-  
-  <footer id="footer">
-    <p>© 2024 Made with ❤️ by <a href="https://t.me/ZORO2045"> ፚ Ꭷ Ꮢ Ꭷ ❥</a></p>
+  <footer>
+    <p>&copy; 2024 Moto DolbyAtmos. Made with ❤️ by <a href="https://t.me/ZORO2045">ፚ Ꭷ Ꮢ Ꭷ ❥</a>. All rights reserved.</p>
   </footer>
 </body>
-  </html>
-  
+</html>
