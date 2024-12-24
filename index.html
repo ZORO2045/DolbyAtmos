@@ -1,194 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moto Dolby Atmos</title>
-  <link rel="icon" href="https://telegra.ph/file/b57356b30c275dbdfe0a9.png">
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #1a1a1a;
-      color: #f0f0f0;
-      overflow-x: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moto Dolby Atmos</title>
+    <link rel="icon" href="https://telegra.ph/file/b57356b30c275dbdfe0a9.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-    header {
-      background: linear-gradient(135deg, #F12317, #912193);
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-      position: relative;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    }
+        header {
+            background: linear-gradient(135deg, #f12317, #912193);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+        }
 
-    header img {
-      max-width: 120px;
-      height: auto;
-      animation: slideIn 1s;
-    }
+        header img {
+            max-width: 150px;
+            height: auto;
+            animation: slideIn 1.2s ease-out;
+            margin-bottom: 20px;
+        }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-top: 20px;
-      animation: fadeIn 1s;
-    }
+        header h1 {
+            font-size: 3rem;
+            margin-top: 10px;
+            animation: fadeIn 1.2s ease-out;
+            font-weight: 700;
+        }
 
-    @keyframes slideIn {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
+        @keyframes slideIn {
+            from { transform: translateY(-80px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-    main {
-      padding: 40px 20px;
-    }
+        main {
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    h2, h3 {
-      color: #F12317;
-      margin-bottom: 20px;
-    }
+        section {
+             width: 100%;
+            max-width: 900px;
+             margin-bottom: 60px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    #features, #requirements, #installation, #download, #contact {
-      margin-bottom: 60px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+        h2 {
+            color: #F12317;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            
+        }
 
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
+        h3 {
+            color: #ddd;
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
 
-    ul li {
-      margin-bottom: 20px;
-      padding: 15px;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-      background: rgba(255, 255, 255, 0.05);
-    }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-    ul li:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
+        ul li {
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-    #download, #contact {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+        ul li:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
 
-    .button {
-      padding: 15px 30px;
-      background: linear-gradient(135deg, #F12317, #912193);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s ease, transform 0.3s ease;
-      margin: 10px 0;
-      font-size: 1.1rem;
-      width: 100%;
-      max-width: 300px;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
+         #download, #contact {
+           display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    .button:hover {
-      background: linear-gradient(135deg, #912193, #F12317);
-      transform: translateY(-3px);
-    }
+        .button {
+            display: inline-block;
+            padding: 16px 35px;
+            background: linear-gradient(135deg, #F12317, #912193);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 15px 0;
+            font-size: 1.2rem;
+            width: 100%;
+            max-width: 320px;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+            font-weight: 500;
+        }
 
-    footer {
-      background-color: #111;
-      color: #ccc;
-      font-size: 14px;
-      padding: 20px 0;
-      text-align: center;
-      position: relative;
-      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
-    }
+        .button:hover {
+            background: linear-gradient(135deg, #912193, #F12317);
+            transform: translateY(-4px);
+             box-shadow: 0 7px 15px rgba(0, 0, 0, 0.5);
+        }
 
-    footer a {
-      color: #ccc;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+        footer {
+             background-color: #0a0a0a;
+            color: #ccc;
+            font-size: 15px;
+            padding: 30px 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.6);
+            margin-top: 60px;
+        }
 
-    footer a:hover {
-      color: #fff;
-    }
-  </style>
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+           header {
+                padding: 40px 15px;
+            }
+
+            header img {
+                max-width: 120px;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            main {
+                 padding: 40px 15px;
+            }
+
+             section {
+                 padding: 25px;
+             }
+
+             h2 {
+                 font-size: 1.8rem;
+                 margin-bottom: 20px;
+             }
+
+             h3 {
+                font-size: 1.3rem;
+             }
+
+            ul li {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+             .button {
+                font-size: 1.1rem;
+                padding: 14px 30px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="https://telegra.ph/file/b57356b30c275dbdfe0a9.png" alt="Dolby Atmos">
-    <h1>Moto Dolby Atmos</h1>
-  </header>
-  <main>
-    <section id="introduction">
-      <h2>Introduction</h2>
-      <p>Welcome to the world of Moto Dolby Atmos, an innovative audio enhancement technology for your Android device. Discover its amazing features.</p>
-    </section>
-    <section id="features">
-      <h2>Features</h2>
-      <ul>
-        <li>
-          <h3>Immersive Sound Experience</h3>
-          <p>Experience sound like never before. Moto Dolby Atmos delivers rich, detailed audio that surrounds you.</p>
-        </li>
-        <li>
-          <h3>Customizable Audio Profiles</h3>
-          <p>Adjust the settings to suit your taste with customizable audio profiles.</p>
-        </li>
-        <li>
-          <h3>Enhanced Gaming Audio</h3>
-          <p>Gain a competitive edge in gaming with stunning clarity and precision.</p>
-        </li>
-      </ul>
-    </section>
-    <section id="requirements">
-      <h2>System Requirements</h2>
-      <ul>
-        <li>Android 12+</li>
-        <li>64 bit only</li>
-        <li>No need for MotoCore</li>
-        <li>Magisk & KSU Supported</li>
-        <li>Magisk installed & Kitsune Mask Recommended</li>
-        <li>Tested on LineageOS 20</li>
-      </ul>
-    </section>
-    <section id="installation">
-      <h2>Installation Guide</h2>
-      <ul>
-        <li>• Remove any other Dolby modules.</li>
-        <li>• Download the DolbyAtmos module and flash it using Magisk or KSU.</li>
-        <li>• Reboot your device.</li>
-        <li>• Open the Dolby Atmos app and customize your settings.</li>
-      </ul>
-    </section>
-    <section id="download">
-      <h2>Download</h2>
-      <p>Download Dolby Atmos Module v7.6</p>
-      <a class="button" href="https://github.com/ZORO2045/DolbyAtmos/releases/download/DolbyAtmos/Moto.DolbyAtmos.v7.6.Magisk+KSU.zip">Download Now</a>
-      <a class="button" href="https://t.me/infoGRX_SC/95?single">Screenshots</a>
-    </section>
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>Follow our telegram channel for more updates.</p>
-      <a class="button" href="https://t.me/infoGRX">Join us</a>
-      <a class="button" href="https://t.me/ZORO2045">Contact me</a>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2024 Moto Dolby Atmos. Made with ❤️ by <a href="https://zoro2045.github.io/">ፚ Ꭷ Ꮢ Ꭷ ❥</a></p>
-  </footer>
+    <header>
+        <img src="https://telegra.ph/file/b57356b30c275dbdfe0a9.png" alt="Dolby Atmos Logo">
+        <h1>Moto Dolby Atmos</h1>
+    </header>
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p style="font-size: 1.1rem;">Welcome to the world of Moto Dolby Atmos, an innovative audio enhancement technology for your Android device. Discover its amazing features.</p>
+        </section>
+        <section id="features">
+            <h2>Features</h2>
+            <ul>
+                <li>
+                    <h3>Immersive Sound Experience</h3>
+                    <p style="font-size: 1.1rem;">Experience sound like never before. Moto Dolby Atmos delivers rich, detailed audio that surrounds you.</p>
+                </li>
+                <li>
+                    <h3>Customizable Audio Profiles</h3>
+                    <p style="font-size: 1.1rem;">Adjust the settings to suit your taste with customizable audio profiles.</p>
+                </li>
+                <li>
+                    <h3>Enhanced Gaming Audio</h3>
+                    <p style="font-size: 1.1rem;">Gain a competitive edge in gaming with stunning clarity and precision.</p>
+                </li>
+            </ul>
+        </section>
+        <section id="requirements">
+            <h2>System Requirements</h2>
+            <ul>
+                <li>Android 12+</li>
+                <li>64 bit only</li>
+                 <li>No need for MotoCore</li>
+                <li>Magisk & KSU Supported</li>
+                 <li>Magisk installed & Kitsune Mask Recommended</li>
+                <li>Tested on LineageOS 20</li>
+            </ul>
+        </section>
+        <section id="installation">
+            <h2>Installation Guide</h2>
+            <ul>
+                <li>• Remove any other Dolby modules.</li>
+                <li>• Download the DolbyAtmos module and flash it using Magisk or KSU.</li>
+                <li>• Reboot your device.</li>
+                <li>• Open the Dolby Atmos app and customize your settings.</li>
+            </ul>
+        </section>
+        <section id="download">
+            <h2>Download</h2>
+            <p style="font-size: 1.1rem;">Download Dolby Atmos Module v7.6</p>
+            <a class="button" href="https://github.com/ZORO2045/DolbyAtmos/releases/download/DolbyAtmos/Moto.DolbyAtmos.v7.6.Magisk+KSU.zip">Download Now</a>
+             <a class="button" href="https://t.me/infoGRX_SC/95?single">Screenshots</a>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p style="font-size: 1.1rem;">Follow our telegram channel for more updates.</p>
+            <a class="button" href="https://t.me/infoGRX">Join us</a>
+            <a class="button" href="https://t.me/ZORO2045">Contact me</a>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Moto Dolby Atmos. Made with ❤️ by <a href="https://zoro2045.github.io/">ፚ Ꭷ Ꮢ Ꭷ ❥</a></p>
+    </footer>
 </body>
-</html>
+  </html>
